@@ -32,6 +32,21 @@ h1, h2, h3 {
 	stroke-width: 3;
 }
 
+path {
+	stroke: #F5F5F5;
+	stroke-width: 1;
+}
+
+g.tick {
+	color: #F5F5F5;
+	-webkit-touch-callout: none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+
 .linePath {
 	fill: none;
 	stroke: #FD5E53;
@@ -47,6 +62,7 @@ circle.selected {
 	stroke: #F7C282;
 	stroke-width: 6;
 }
+
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */
 #forkongithub a{

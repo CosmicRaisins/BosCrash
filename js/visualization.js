@@ -12,6 +12,8 @@ d3.json("data/TestingData.json").then(data => {
   // a dispatcher (d3-dispatch) for selection events;
   // a div id selector to put our svg in; and the data to use.
   let hourlyLineChart = linechart()
+    .width(825)
+    .height(400)
     .x(d => d.hour)
     .xLabel("HOUR")
     .y(d => d.records)
