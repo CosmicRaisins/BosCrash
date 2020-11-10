@@ -2,7 +2,7 @@
 // load data from csv
 // TODO: Update Data Column Names
 // TODO: More Cleaning
-d3.csv("data/TestingData.json").then(data => {
+d3.json("data/TestingData.json").then(data => {
 
   // General event type for selections, used by d3-dispatch
   // https://github.com/d3/d3-dispatch
@@ -16,7 +16,6 @@ d3.csv("data/TestingData.json").then(data => {
     .xLabel("Hour")
     .y(d => d.records)
     .yLabel('Number or Crashes')
-    .yLabelOffset(40)
     .selectionDispatcher(d3.dispatch(dispatchString))
     ("#vis-svg-1", data);
 })
