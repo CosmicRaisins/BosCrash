@@ -13,7 +13,7 @@ d3.json("data/TestingData.json").then(data => {
   // a div id selector to put our svg in; and the data to use.
   let hourlyLineChart = linechart()
     .x(d => d.hour)
-    .xLabel("Hour")
+    .xLabel("HOUR")
     .y(d => d.records)
     .yLabel('Number or Crashes')
     .selectionDispatcher(d3.dispatch(dispatchString))
