@@ -57,9 +57,8 @@ function linechart() {
     // Put X axis tick labels at an angle
     xAxis.selectAll('text')
       .style('text-anchor', 'end')
-      .attr('dx', '-.8em')
-      .attr('dy', '.15em')
-      .attr('transform', 'rotate(-65)');
+      .attr('dx', '0.25em')
+      .attr('dy', '1em')
 
     // X axis label
     xAxis.append('text')
@@ -74,6 +73,7 @@ function linechart() {
       .attr('class', 'axisLabel')
       .attr('transform', 'translate(' + yLabelOffsetPx + ', -12)')
       .text(yLabelText);
+
 
     // Add the line
     svg.append('path')
