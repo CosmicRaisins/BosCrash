@@ -99,7 +99,7 @@ function linechart() {
       .merge(points)
       .attr('cx', X)
       .attr('cy', Y)
-      .attr('r',6)
+      .attr('r',7)
       // mouse over events on points
       .on("mouseover", function(event,d) {
         // enlarge points on hover
@@ -121,7 +121,15 @@ function linechart() {
           .delay(100)
           .duration(500)
           .style("opacity", 0);
-      });
+      })
+      // a click selector for the line chart
+      .on("click", function (event, d) {
+        if (d3.select(event.currentTarget).classed("selected")) {
+          d3.select(event.currentTarget).classed("selected", false)
+        } else {
+          d3.select(event.currentTarget).classed("selected", true)
+        }
+      })
 
 
 

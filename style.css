@@ -28,16 +28,28 @@ h1, h2, h3 {
 /* Default style for marks and channels used */
 .point {
 	fill: white;
-	stroke: #F7C282;
-	stroke-width: 3;
 }
 
-/* Default style for marks and channels used */
-circle.highlighted {
+/* Style for hovered and selected marks */
+circle.highlighted.selected {
 	fill: white;
 	stroke: #F7C282;
-	stroke-width: 3;
-	r: 10;
+	stroke-width: 4;
+	r: 14;
+}
+
+/* Style for hovered marks */
+circle.highlighted {
+	fill: white;
+	r: 14;
+}
+
+/* Style for selected marks (circles) */
+circle.selected {
+	fill: white;
+	stroke: #F7C282;
+	stroke-width: 4;
+	r: 8;
 }
 
 path {
@@ -60,7 +72,7 @@ g.tick {
 .linePath {
 	fill: none;
 	stroke: #FD5E53;
-	stroke-width: 5;
+	stroke-width: 6;
 }
 .axisLabel {
 	fill: #f5f5f5;
@@ -74,13 +86,6 @@ g.tick {
 	user-select:none;
 }
 
-/* Style for selected marks (circles) */
-circle.selected {
-	fill: white;
-	stroke: #F7C282;
-	stroke-width: 5;
-	r: 9;
-}
 
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */
