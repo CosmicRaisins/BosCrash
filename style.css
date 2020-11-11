@@ -32,6 +32,14 @@ h1, h2, h3 {
 	stroke-width: 3;
 }
 
+/* Default style for marks and channels used */
+circle.highlighted {
+	fill: white;
+	stroke: #F7C282;
+	stroke-width: 3;
+	r: 10;
+}
+
 path {
 	stroke: #F5F5F5;
 	stroke-width: 1;
@@ -52,7 +60,7 @@ g.tick {
 .linePath {
 	fill: none;
 	stroke: #FD5E53;
-	stroke-width: 6;
+	stroke-width: 5;
 }
 .axisLabel {
 	fill: #f5f5f5;
@@ -69,7 +77,8 @@ g.tick {
 circle.selected {
 	fill: white;
 	stroke: #F7C282;
-	stroke-width: 6;
+	stroke-width: 5;
+	r: 9;
 }
 
 
@@ -128,4 +137,19 @@ circle.selected {
 		-o-transform:rotate(45deg);
 		box-shadow:4px 4px 10px rgba(0,0,0,0.8);
 	}
+
+	/*Style for hover tooltips*/
+	div.tooltip {
+		position: absolute;
+		text-align: left;
+		width: 100px;
+		height: 60px;
+		padding: 7.5px;
+		font:16px sans-serif;
+		background: #f5f5f5;
+		border: 0px;
+		border-radius: 8px;
+		pointer-events: none;
+	}
+
 }

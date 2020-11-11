@@ -12,6 +12,7 @@ function linechart() {
       right: 30,
       bottom: 35
     },
+    title = "Default Title",
     width = 500 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
     xValue = d => d[0],
@@ -52,13 +53,8 @@ function linechart() {
     // X axis
     let xAxis = svg.append('g')
       .attr('transform', 'translate(0,' + (height) + ')')
-      .call(d3.axisBottom(xScale));
-
-    // Put X axis tick labels at an angle
-    xAxis.selectAll('text')
-      .style('text-anchor', 'end')
-      .attr('dx', '0.25em')
-      .attr('dy', '1em')
+      .call(d3.axisBottom(xScale)
+        .ticks(d3.timeHour.every(12)));
 
     // X axis label
     xAxis.append('text')
@@ -81,9 +77,11 @@ function linechart() {
       .attr('class', 'linePath')
       .attr('d', d3.line()
         // Just add that to have a curve instead of segments
+        .curve(d3.curveCardinal)
         .x(X)
         .y(Y)
       );
+
 
     // Add the points
     let points = svg.append('g')
@@ -98,51 +96,75 @@ function linechart() {
       .merge(points)
       .attr('cx', X)
       .attr('cy', Y)
-      .attr('r',5);
+      .attr('r',6)
+      .on("mouseover", function(event,d) {
+        d3.select(event.currentTarget)
+          .classed("highlighted", true)
+        div.transition()
+          .duration(200)
+          .style("opacity", 1);
+        div.html(d.hour + ":00" + " - " + (d.hour + 1) + ":00" + "<br/>" + "Crashes: " + d.records)
+          .style("left", (event.pageX + 15) + "px")
+          .style("top", (event.pageY + 15) + "px");
+      })
+      .on("mouseout", function(event, d) {
+        d3.select(event.currentTarget)
+          .classed("highlighted", false)
+        div.transition()
+          .duration(500)
+          .style("opacity", 0);
+      });
+
+
+    let div = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opcacity", 0);
+
+
 
     selectableElements = points;
 
-    svg.call(brush);
-
-    // Highlight points when brushed
-    function brush(g) {
-      const brush = d3.brush()
-        .on('start brush', highlight)
-        .on('end', brushEnd)
-        .extent([
-          [-margin.left, -margin.bottom],
-          [width + margin.right, height + margin.top]
-        ]);
-
-      ourBrush = brush;
-
-      g.call(brush); // Adds the brush to this element
-
-      // Highlight the selected circles.
-      function highlight(event, d) {
-        if (event.selection === null) return;
-        const [
-          [x0, y0],
-          [x1, y1]
-        ] = event.selection;
-        points.classed('selected', d =>
-          x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
-        );
-
-        // Get the name of our dispatcher's event
-        let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
-
-        // Let other charts know
-        dispatcher.call(dispatchString, this, svg.selectAll('.selected').data());
-      }
-
-      function brushEnd(event, d) {
-        // We don't want infinite recursion
-        if(event.sourceEvent !== undefined && event.sourceEvent.type!='end'){
-          d3.select(this).call(brush.move, null);
-        }
-      }
-    }
+    // svg.call(brush);
+    //
+    // // Highlight points when brushed
+    // function brush(g) {
+    //   const brush = d3.brush()
+    //     .on('start brush', highlight)
+    //     .on('end', brushEnd)
+    //     .extent([
+    //       [-margin.left, -margin.bottom],
+    //       [width + margin.right, height + margin.top]
+    //     ]);
+    //
+    //   ourBrush = brush;
+    //
+    //   g.call(brush); // Adds the brush to this element
+    //
+    //   // Highlight the selected circles.
+    //   function highlight(event, d) {
+    //     if (event.selection === null) return;
+    //     const [
+    //       [x0, y0],
+    //       [x1, y1]
+    //     ] = event.selection;
+    //     points.classed('selected', d =>
+    //       x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
+    //     );
+    //
+    //     // Get the name of our dispatcher's event
+    //     let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+    //
+    //     // Let other charts know
+    //     dispatcher.call(dispatchString, this, svg.selectAll('.selected').data());
+    //   }
+    //
+    //   function brushEnd(event, d) {
+    //     // We don't want infinite recursion
+    //     if(event.sourceEvent !== undefined && event.sourceEvent.type!='end'){
+    //       d3.select(this).call(brush.move, null);
+    //     }
+    //   }
+    // }
 
     return chart;
   }

@@ -15,10 +15,9 @@ d3.json("data/TestingData.json").then(data => {
     .width(750)
     .height(350)
     .x(d => d.hour)
-    .xLabel("HOUR")
+    .xLabel("Hour")
     .y(d => d.records)
-    .yLabel('Number or Crashes')
-    .yLabelOffset(95)
+    .yLabel("Crashes")
     .selectionDispatcher(d3.dispatch(dispatchString))
     ("#vis-svg-1", data);
 })
