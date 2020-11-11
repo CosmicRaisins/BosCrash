@@ -52,22 +52,21 @@ function linechart() {
 
     // X axis
     let xAxis = svg.append('g')
-      .attr('transform', 'translate(0,' + (height) + ')')
-      .call(d3.axisBottom(xScale)
-        .ticks(d3.timeHour.every(12)));
+      .attr('transform', 'translate(0,' + (height + 35) + ')')
+      .call(d3.axisBottom(xScale));
+    //TODO: does not work
+        // .ticks(0, 22, 12));
 
     // X axis label
     xAxis.append('text')
       .attr('class', 'axisLabel')
-      .attr('transform', 'translate(' + (width - 50) + ',-10)')
+      .attr('transform', 'translate(' + (width - 70) + ',-10)')
       .text(xLabelText);
 
-    // Y axis and label
-    let yAxis = svg.append('g')
-      .call(d3.axisLeft(yScale))
-      .append('text')
+    // Y axis label, act like the title for the graph
+    let yAxis = svg.append('text')
       .attr('class', 'axisLabel')
-      .attr('transform', 'translate(' + yLabelOffsetPx + ', -12)')
+      .attr('transform', 'translate(' + yLabelOffsetPx + ', 0)')
       .text(yLabelText);
 
 
@@ -76,12 +75,16 @@ function linechart() {
       .datum(data)
       .attr('class', 'linePath')
       .attr('d', d3.line()
-        // Just add that to have a curve instead of segments
+        // curving the jagged line path
         .curve(d3.curveCardinal)
         .x(X)
         .y(Y)
       );
 
+    // append the tooltip
+    let div = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opcacity", 0)
 
     // Add the points
     let points = svg.append('g')
@@ -97,28 +100,29 @@ function linechart() {
       .attr('cx', X)
       .attr('cy', Y)
       .attr('r',6)
+      // mouse over events on points
       .on("mouseover", function(event,d) {
+        // enlarge points on hover
         d3.select(event.currentTarget)
           .classed("highlighted", true)
+        // show tooltips on hover
         div.transition()
           .duration(200)
           .style("opacity", 1);
-        div.html(d.hour + ":00" + " - " + (d.hour + 1) + ":00" + "<br/>" + "Crashes: " + d.records)
+        div.html(d.hour + ":00" + " - " + (d.hour + 1) + ":00" + "<br/>" + "<br/>" + d.records +" crashes")
           .style("left", (event.pageX + 15) + "px")
           .style("top", (event.pageY + 15) + "px");
       })
+      // return point to normal size and remove tooltip on mouseout
       .on("mouseout", function(event, d) {
         d3.select(event.currentTarget)
           .classed("highlighted", false)
         div.transition()
+          .delay(100)
           .duration(500)
           .style("opacity", 0);
       });
 
-
-    let div = d3.select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opcacity", 0);
 
 
 
@@ -227,6 +231,7 @@ function linechart() {
     return chart;
   };
 
+  // TODO: Brushing temporarily removed.
   // Gets or sets the dispatcher we use for selection events
   chart.selectionDispatcher = function (_) {
     if (!arguments.length) return dispatcher;
