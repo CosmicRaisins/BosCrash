@@ -9,6 +9,14 @@ h1, h2, h3 {
 	line-height: 1.2
 }
 
+
+#map {
+	position: relative;
+	z-index: 0;
+	width: 50%;
+	height: 500px;
+}
+
 /* Your text should be in a nice narrow column */
 .content-column {
 	max-width: 650px;

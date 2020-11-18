@@ -80,13 +80,14 @@
       <rect x=870 y=25 width='53.5%' height='46.75%' fill='#2D2D2D', rx="15"></rect>
       <rect x=870 y=553 width='53.5%' height='46.75%' fill='#2D2D2D', rx="15"></rect>
       <svg id='vis-svg-1' x=860 y=-10 width='53.5%' height='47.5%'></svg>
-      <svg id='vis-svg-2' x=860 y=520 width='53.5%' height='47.5%'></svg>	    
       
       
     <!-- Don't delete the closing tag! -->
     </svg>
   </div>
-  
+
+  <div id="map"></div>
+
   <!-- Further writeup -->
   <div class = 'content-column'>
 
@@ -125,11 +126,13 @@
       </li>
     </ul>
   </div>
+
   
   <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
   <script src='lib/d3.v6.1.1/d3.min.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
+  <script src='js/mapchart.js'></script>
   <script src='js/linechart.js'></script>
-  <script src='js/barchart.js'></script>	
   <script src='js/visualization.js'></script>
 </body>
 </html>
