@@ -43,13 +43,11 @@ circle.highlighted.selected {
 	fill: white;
 	stroke: #F7C282;
 	stroke-width: 4;
-	r: 14;
 }
 
 /* Style for hovered marks */
 circle.highlighted {
 	fill: white;
-	r: 14;
 }
 
 /* Style for selected marks (circles) */
@@ -57,7 +55,6 @@ circle.selected {
 	fill: white;
 	stroke: #F7C282;
 	stroke-width: 4;
-	r: 8;
 }
 
 path {
