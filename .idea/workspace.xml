@@ -20,10 +20,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74314601-4ef0-4774-b21c-4715a6492353" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/validate-html-css-and-links.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/validate-html-css-and-links.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-group-10-boston-crash-statistics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project-group-10-boston-crash-statistics.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/DataSemiFinal.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/DataSemiFinal.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/data/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/TestingData - Copy.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/TestingData - Copy.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TestingData.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/TestingData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/weather.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/weather.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicons/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/favicons/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicons/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/favicons/browserconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicons/site.webmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/favicons/site.webmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/files/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/img/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/js/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/barchart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/barchart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/linechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/linechart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/mapchart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/mapchart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/visualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/visualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/lib/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/d3.v6.1.1/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/lib/d3.v6.1.1/API.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/d3.v6.1.1/CHANGES.md" beforeDir="false" afterPath="$PROJECT_DIR$/lib/d3.v6.1.1/CHANGES.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/d3.v6.1.1/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/lib/d3.v6.1.1/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/d3.v6.1.1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/lib/d3.v6.1.1/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/d3.v6.1.1/d3.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/d3.v6.1.1/d3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/d3.v6.1.1/d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/d3.v6.1.1/d3.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +69,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1k6lmk78qa0Hvu6ihUO9aF17qGP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,8 +77,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../assignment--brushing-and-linking-CosmicRaisins" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-team-8-bikes" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -63,6 +91,11 @@
       <updated>1605029083024</updated>
       <workItem from="1605029084070" duration="7117000" />
       <workItem from="1605039704209" duration="23116000" />
+      <workItem from="1605674694924" duration="216000" />
+      <workItem from="1605675489403" duration="43820000" />
+      <workItem from="1605735587299" duration="930000" />
+      <workItem from="1606238906507" duration="54000" />
+      <workItem from="1606239041178" duration="11977000" />
     </task>
     <servers />
   </component>
@@ -82,14 +115,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="538" y="292" key="FileChooserDialogImpl" timestamp="1605065418550">
+    <state x="538" y="292" key="FileChooserDialogImpl" timestamp="1606245425885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="538" y="292" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1605065418550" />
-    <state x="95" y="0" width="1294" height="1047" key="dock-window-1" timestamp="1605049194995">
+    <state x="538" y="292" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1606245425885" />
+    <state x="84" y="111" key="SettingsEditor" timestamp="1605674910026">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="95" y="0" width="1294" height="1047" key="dock-window-1/0.0.2560.1040@0.0.2560.1040" timestamp="1605049194995" />
+    <state x="84" y="111" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1605674910026" />
+    <state x="1312" y="0" width="929" height="1006" key="dock-window-1" timestamp="1606252061370">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1312" y="0" width="929" height="1006" key="dock-window-1/0.0.2560.1040@0.0.2560.1040" timestamp="1606252061370" />
+    <state x="0" y="0" width="929" height="967" key="dock-window-2" timestamp="1606251458461">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="0" y="0" width="929" height="967" key="dock-window-2/0.0.2560.1040@0.0.2560.1040" timestamp="1606251458461" />
     <state x="335" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1605067202875">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

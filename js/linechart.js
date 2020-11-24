@@ -82,8 +82,8 @@ function linechart() {
       );
 
     // append the tooltip
-    let div = d3.select("body").append("div")
-      .attr("class", "tooltip")
+    let lineTip = d3.select("body").append("div")
+      .attr("class", "tooltip-line")
       .style("opcacity", 0)
 
     // Add the points
@@ -105,23 +105,36 @@ function linechart() {
         // enlarge points on hover
         d3.select(event.currentTarget)
           .classed("highlighted", true)
+          .transition()
+          .duration(200)
+          .attr("r", 12)
         // show tooltips on hover
-        div.transition()
+        lineTip.transition()
           .duration(200)
           .style("opacity", 1);
-        div.html(d.hour + ":00" + " - " + (d.hour + 1) + ":00" + "<br/>" + "<br/>" + d.records +" crashes")
+        lineTip.html(d.hour + ":00" + " - " + (d.hour + 1) + ":00" + "<br/>" + "<br/>" + d.records +" crashes")
           .style("left", (event.pageX + 15) + "px")
           .style("top", (event.pageY + 15) + "px");
       })
-      // return point to normal size and remove tooltip on mouseout
-      .on("mouseout", function(event, d) {
+
+    // handles mouseout events for the points on line
+      points.on("mouseout", function(event, d) {
+        // declass point as highlighted
         d3.select(event.currentTarget)
           .classed("highlighted", false)
-        div.transition()
+          // return the points to regular size
+          .transition()
+          .delay(50)
+          .duration(200)
+          .attr("r", 7)
+        // remove tooltip
+        lineTip.transition()
           .delay(100)
           .duration(500)
           .style("opacity", 0);
       })
+
+
       // a click selector for the line chart
       .on("click", function (event, d) {
         if (d3.select(event.currentTarget).classed("selected")) {

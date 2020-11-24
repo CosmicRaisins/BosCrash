@@ -57,6 +57,10 @@ circle.selected {
 	stroke-width: 4;
 }
 
+dots.highlighted {
+	fill: white;
+}
+
 path {
 	stroke: #F5F5F5;
 	stroke-width: 1;
@@ -150,7 +154,7 @@ g.tick {
 	}
 
 	/*Style for hover tooltips*/
-	div.tooltip {
+	div.tooltip-line {
 		position: absolute;
 		text-align: left;
 
@@ -165,6 +169,26 @@ g.tick {
 		border-style: solid;
 		border-width: 3px;
 		border-color: #F7C282;
+		border-radius: 15px;
+		pointer-events: none;
+	}
+
+	/*Style for hover tooltips*/
+	div.tooltip-map {
+		position: absolute;
+		text-align: left;
+
+		width: 120px;
+		height: 120px;
+		padding: 8px;
+
+		font: 15px Arial;
+		font-weight: bold;
+
+		background: #f5f5f5;
+		border-style: solid;
+		border-width: 3px;
+		border-color: #ff3859;
 		border-radius: 15px;
 		pointer-events: none;
 	}
