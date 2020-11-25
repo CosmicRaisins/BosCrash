@@ -112,7 +112,7 @@ function linechart() {
         lineTip.transition()
           .duration(200)
           .style("opacity", 1);
-        lineTip.html(d.hour + ":00" + " - " + (d.hour + 1) + ":00" + "<br/>" + "<br/>" + d.records +" crashes")
+        lineTip.html(d.CRASH_HOUR + ":00" + " - " + (d.hour + 1) + ":00" + "<br/>" + "<br/>" + d.num +" crashes")
           .style("left", (event.pageX + 15) + "px")
           .style("top", (event.pageY + 15) + "px");
       })

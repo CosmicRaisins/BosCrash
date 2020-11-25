@@ -35,7 +35,7 @@ d3.csv("data/SimpleDataSample.csv").then(function (data) {
 
   let sizeValue = d => d.num
   // define a size scale for the points
-  let sizeMax = 4
+  let sizeMax = 2
   let sizeScale = d3.scaleSqrt().range([-1, sizeMax])
 
 // append the points
@@ -54,7 +54,7 @@ d3.csv("data/SimpleDataSample.csv").then(function (data) {
         .duration(200)
         .style("fill", "white")
         .style("opacity", "1")
-        .attr("r", 15);
+        .attr("r", 10);
 
       // shows tool tip on hover
       mapTip.transition()

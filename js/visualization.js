@@ -2,7 +2,7 @@
 // load data from csv
 // TODO: Update Data Column Names
 // TODO: More Cleaning
-d3.json("data/TestingData.json").then(data => {
+d3.csv("data/time.csv").then(data => {
 
   // General event type for selections, used by d3-dispatch
   // https://github.com/d3/d3-dispatch
@@ -14,9 +14,9 @@ d3.json("data/TestingData.json").then(data => {
   let hourlyLineChart = linechart()
     .width(850)
     .height(320)
-    .x(d => d.hour)
+    .x(d => +d.CRASH_HOUR)
     .xLabel("Hour of Day")
-    .y(d => d.records)
+    .y(d => +d.num)
     .yLabel("Trend of Crashes in Boston by Hour")
     .selectionDispatcher(d3.dispatch(dispatchString))
     ("#vis-svg-1", data);
