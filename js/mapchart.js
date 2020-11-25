@@ -20,6 +20,11 @@ let svg = d3
   .style("position", "absolute")
   .style("z-index", 2);
 
+// Color scale: give me a specie name, I return a color
+var color = d3.scaleOrdinal()
+  .domain(["BRISTOL", "MIDDLESEX", "PLYMOUTH", "SUFFOLK", "ESSEX", "NORFOLK" ])
+  .range([ "#8F89C1", "#B883B8", "#DA8CAE", "#F8A0A4", "#FAB89E", "#FAC484"])
+
 // connect d3 geocoding to mapboxgl
 function project(d) {
   return map.project(new mapboxgl.LngLat(d.lon, d.lat));
@@ -45,7 +50,7 @@ d3.csv("data/SimpleDataSample.csv").then(function (data) {
     .enter()
     .append("circle")
     .attr("r", d => sizeScale(sizeValue(d)))
-    .attr("fill", "#ff3859")
+    .attr("fill", function (d) { return color(d.CNTY_NAME)})
     .attr("opacity", "0.75")
     .on("mouseover", function(event,d) {
       // enlarge points on hover
@@ -76,9 +81,9 @@ d3.csv("data/SimpleDataSample.csv").then(function (data) {
       .transition()
       .delay(50)
       .duration(200)
-      .attr("r", d => sizeScale(sizeValue(d)))
-      .style("fill", "#ff3859")
-      .style("opacity", "0.75");
+      .style("fill", function (d) { return color(d.CNTY_NAME)})
+      .style("opacity", "0.75")
+      .attr("r", d => sizeScale(sizeValue(d)));
     // remove tooltip
     mapTip.transition()
       .delay(100)

@@ -20,14 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74314601-4ef0-4774-b21c-4715a6492353" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/paraCoord.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/SimpleDataSample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/SimpleDataSample.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/Untitled.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/linechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/linechart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/mapchart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/mapchart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/visualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/visualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/paraCoord.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/paraCoord.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +67,7 @@
       <workItem from="1605675489403" duration="43820000" />
       <workItem from="1605735587299" duration="930000" />
       <workItem from="1606238906507" duration="54000" />
-      <workItem from="1606239041178" duration="16678000" />
+      <workItem from="1606239041178" duration="18262000" />
     </task>
     <servers />
   </component>
