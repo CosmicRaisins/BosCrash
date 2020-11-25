@@ -2,7 +2,7 @@
 
 // Initialize a line chart. Modeled after Mike Bostock's
 // Reusable Chart framework https://bost.ocks.org/mike/chart/
-function linechart() {
+function barchart() {
 
   // Based on Mike Bostock's margin convention
   // https://bl.ocks.org/mbostock/3019563
@@ -41,7 +41,8 @@ function linechart() {
     //Define scales
     xScale
       .domain(d3.group(data, xValue).keys())
-      .rangeRound([0, width]);
+      .rangeRound([margin.left, width])
+      .padding(0.5);
 
     yScale
       .domain([
@@ -52,88 +53,85 @@ function linechart() {
 
     // X axis
     let xAxis = svg.append('g')
-      .attr('transform', 'translate(0,' + (height + 35) + ')')
-      .call(d3.axisBottom(xScale));
+      .attr('transform', `translate(0,${height})`)
+      .call(d3.axisBottom().scale(xScale))
+      .selectAll('text')
+      .style('text-anchor', 'end')
+      .attr('transform', 'rotate(-20)');
     //TODO: does not work
     // .ticks(0, 22, 12));
 
     // X axis label
-    xAxis.append('text')
+    svg.append('text')
       .attr('class', 'axisLabel')
-      .attr('transform', 'translate(' + (width - 70) + ',-10)')
+      .attr('x', -300)
+      .attr('y', 870)
+      .attr('transform', 'rotate(-90)')
       .text(xLabelText);
 
+    let yAxis = svg.append('g')
+      .attr('transform', `translate(${margin.left},0)`)
+      .call(d3.axisLeft().scale(yScale));
+
+
     // Y axis label, act like the title for the graph
-    let yAxis = svg.append('text')
+    yAxis = svg.append('text')
       .attr('class', 'axisLabel')
-      .attr('transform', 'translate(' + yLabelOffsetPx + ', 0)')
+      .attr('transform', 'translate(' + yLabelOffsetPx + ', -25)')
       .text(yLabelText);
 
+    let barTip = d3.select("body").append("div")
+      .attr("class", "tooltip-line")
+      .style("opcacity", 0);
 
-    svg.selectAll("bar")
-      .datum(data)
-      .enter().append("rect")
-      .style("fill", "steelblue")
-      .attr("x", function(d) { return x(d.date); })
-      .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.value); })
-      .attr("height", function(d) { return height - y(d.value); });
 
-    // append the tooltip
-    let div = d3.select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opcacity", 0)
-
-    // Add the points
-    let points = svg.append('g')
-      .selectAll('.linePoint')
-      .data(data);
-
-    points.exit().remove();
-
-    points = points.enter()
-      .append('circle')
-      .attr('class', 'point linePoint')
-      .merge(points)
-      .attr('cx', X)
-      .attr('cy', Y)
-      .attr('r',7)
-      // mouse over events on points
+    let bar = svg.selectAll("rect")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("x", function(d) {
+        return xScale(d.Weather);
+      })
+      .attr("width", xScale.bandwidth())
+      .attr("y", function(d) {
+        return yScale(d.Count);
+      })
+      .attr("height", function(d) {
+        return height - yScale(d.Count);
+      })
+      .style('fill', '#9370DB')
       .on("mouseover", function(event,d) {
         // enlarge points on hover
         d3.select(event.currentTarget)
           .classed("highlighted", true)
           .transition()
           .duration(200)
-          .attr("r", 12)
+          .style("fill", 'blue')
         // show tooltips on hover
-        div.transition()
+        barTip.transition()
           .duration(200)
           .style("opacity", 1);
-        div.html(d.hour + ":00" + " - " + (d.hour + 1) + ":00" + "<br/>" + "<br/>" + d.records +" crashes")
+        barTip.html(d.Weather + "<br/>" + "<br/>" + d.Count +" crashes")
           .style("left", (event.pageX + 15) + "px")
           .style("top", (event.pageY + 15) + "px");
+      });
+
+
+      bar.on("mouseout", function(event, d) {
+        // declass point as highlighted
+        d3.select(event.currentTarget)
+          .classed("highlighted", false)
+          // return the points to regular size
+          .transition()
+          .delay(50)
+          .duration(200)
+          .style("fill", '#9370DB')
+        // remove tooltip
+        barTip.transition()
+          .delay(100)
+          .duration(500)
+          .style("opacity", 1);
       })
-
-    // handles mouseout events for the points on line
-    points.on("mouseout", function(event, d) {
-      // declass point as highlighted
-      d3.select(event.currentTarget)
-        .classed("highlighted", false)
-        // return the points to regular size
-        .transition()
-        .delay(50)
-        .duration(200)
-        .attr("r", 7)
-      // remove tooltip
-      div.transition()
-        .delay(100)
-        .duration(500)
-        .style("opacity", 0);
-    })
-
-
-      // a click selector for the line chart
       .on("click", function (event, d) {
         if (d3.select(event.currentTarget).classed("selected")) {
           d3.select(event.currentTarget).classed("selected", false)
@@ -143,9 +141,12 @@ function linechart() {
       })
 
 
+      selectableElements = bar;
 
 
-    selectableElements = points;
+
+
+
 
     // svg.call(brush);
     //
