@@ -148,12 +148,33 @@ function barchart() {
             .transition()
             .duration(150)
             .style("fill", "#2D2D2D");
+          // Get the name of our dispatcher's event
+          let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+
+          // get all the counties curretly selected
+          let temp = svg.selectAll('.selected').data()
+          let selected = []
+          temp.forEach(element => selected.push(element["COUNTY"]));
+          // Let other charts know
+          dispatcher.call(dispatchString, this, selected);
+
         } else {
           d3.select(event.currentTarget)
             .classed("selected", true)
             .transition()
             .duration(100)
             .style("fill", function (d) { return color1(d.COUNTY)});
+
+          // Get the name of our dispatcher's event
+          let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+
+          // get all the counties curretly selected
+          let temp = svg.selectAll('.selected').data()
+          let selected = []
+          temp.forEach(element => selected.push(element["COUNTY"]));
+
+          // Let other charts know
+          dispatcher.call(dispatchString, this, selected);
         }
       })
 
