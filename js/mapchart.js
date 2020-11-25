@@ -18,12 +18,12 @@ let svg = d3
   .attr("width", "100%")
   .attr("height", "500")
   .style("position", "absolute")
-  .style("z-index", 2);
+  .style("z-index", 3);
 
 // Color scale: give me a specie name, I return a color
-var color = d3.scaleOrdinal()
-  .domain(["BRISTOL", "MIDDLESEX", "PLYMOUTH", "SUFFOLK", "ESSEX", "NORFOLK" ])
-  .range([ "#8F89C1", "#B883B8", "#DA8CAE", "#F8A0A4", "#FAB89E", "#FAC484"])
+let color = d3.scaleOrdinal()
+  .domain(["BRISTOL", "MIDDLESEX", "PLYMOUTH", "SUFFOLK", "ESSEX", "NORFOLK", "WORCESTER" ])
+  .range([ "#8F89C1", "#B883B8", "#DA8CAE", "#F8A0A4", "#FAB89E", "#FAC484", "#F7DD92"])
 
 // connect d3 geocoding to mapboxgl
 function project(d) {

@@ -107,7 +107,7 @@ function linechart() {
           .classed("highlighted", true)
           .transition()
           .duration(200)
-          .attr("r", 12)
+          .attr("r", 14)
         // show tooltips on hover
         lineTip.transition()
           .duration(200)

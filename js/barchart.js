@@ -78,9 +78,13 @@ function barchart() {
       .text(yLabelText);
 
     let barTip = d3.select("body").append("div")
-      .attr("class", "tooltip-line")
+      .attr("class", "tooltip-bar")
       .style("opcacity", 0);
 
+    // Color scale: give me a specie name, I return a color
+    let color1 = d3.scaleOrdinal()
+      .domain(["BRISTOL", "MIDDLESEX", "PLYMOUTH", "SUFFOLK", "ESSEX", "NORFOLK", "WORCESTER" ])
+      .range([ "#8F89C1", "#B883B8", "#DA8CAE", "#F8A0A4", "#FAB89E", "#FAC484", "#F7DD92"])
 
     let bar = svg.selectAll("rect")
       .data(data)
@@ -93,17 +97,22 @@ function barchart() {
       .attr("y", function(d) {
         return yScale(d.Numbers);
       })
+      .attr("rx", 3)
+      .attr("ry", 3)
       .attr("height", function(d) {
         return height - yScale(d.Numbers);
       })
-      .style('fill', '#9370DB')
+      .style("fill", function (d) { return color1(d.COUNTY)})
+      .style("stroke", function (d) { return color1(d.COUNTY)})
+      .style("stroke-width", 2)
+      .classed("selected", true)
       .on("mouseover", function(event,d) {
         // enlarge points on hover
         d3.select(event.currentTarget)
           .classed("highlighted", true)
           .transition()
           .duration(200)
-          .style("fill", 'blue')
+          // .style("fill", "white")
         // show tooltips on hover
         barTip.transition()
           .duration(200)
@@ -122,18 +131,29 @@ function barchart() {
           .transition()
           .delay(50)
           .duration(200)
-          .style("fill", '#9370DB')
+          // .style("fill", function (d) { return color1(d.COUNTY)})
         // remove tooltip
         barTip.transition()
           .delay(100)
           .duration(500)
-          .style("opacity", 1);
+          .style("opacity", 0);
       })
+
+
+
       .on("click", function (event, d) {
         if (d3.select(event.currentTarget).classed("selected")) {
-          d3.select(event.currentTarget).classed("selected", false)
+          d3.select(event.currentTarget)
+            .classed("selected", false)
+            .transition()
+            .duration(150)
+            .style("fill", "#2D2D2D");
         } else {
-          d3.select(event.currentTarget).classed("selected", true)
+          d3.select(event.currentTarget)
+            .classed("selected", true)
+            .transition()
+            .duration(100)
+            .style("fill", function (d) { return color1(d.COUNTY)});
         }
       })
 
