@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="74314601-4ef0-4774-b21c-4715a6492353" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/linechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/linechart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/mapchart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/mapchart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/paraCoord.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/paraCoord.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TestingData - Copy.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/weather.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,7 @@
       <workItem from="1605675489403" duration="43820000" />
       <workItem from="1605735587299" duration="930000" />
       <workItem from="1606238906507" duration="54000" />
-      <workItem from="1606239041178" duration="18262000" />
+      <workItem from="1606239041178" duration="19146000" />
     </task>
     <servers />
   </component>
@@ -107,5 +106,17 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="335" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1605067202875" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/mapchart.js</url>
+          <line>56</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -36,7 +36,7 @@ let mapTip = d3.select("body").append("div")
   .style("opcacity", 0)
 
 // load data
-d3.csv("data/SimpleDataSample.csv").then(function (data) {
+d3.csv("data/location.csv").then(function (data) {
 
   let sizeValue = d => d.num
   // define a size scale for the points
