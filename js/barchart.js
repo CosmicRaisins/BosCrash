@@ -45,11 +45,8 @@ function barchart() {
       .padding(0.5);
 
     yScale
-      .domain([
-        d3.min(data, d => yValue(d)),
-        d3.max(data, d => yValue(d))
-      ])
-      .rangeRound([height, 0]);
+      .domain([1600, 0])
+      .rangeRound([0, height]);
 
     // X axis
     let xAxis = svg.append('g')
@@ -90,14 +87,14 @@ function barchart() {
       .enter()
       .append("rect")
       .attr("x", function(d) {
-        return xScale(d.Weather);
+        return xScale(d.COUNTY);
       })
       .attr("width", xScale.bandwidth())
       .attr("y", function(d) {
-        return yScale(d.Count);
+        return yScale(d.Numbers);
       })
       .attr("height", function(d) {
-        return height - yScale(d.Count);
+        return height - yScale(d.Numbers);
       })
       .style('fill', '#9370DB')
       .on("mouseover", function(event,d) {
@@ -111,7 +108,7 @@ function barchart() {
         barTip.transition()
           .duration(200)
           .style("opacity", 1);
-        barTip.html(d.Weather + "<br/>" + "<br/>" + d.Count +" crashes")
+        barTip.html(d.COUNTY + "<br/>" + "<br/>" + d.Numbers +" crashes")
           .style("left", (event.pageX + 15) + "px")
           .style("top", (event.pageY + 15) + "px");
       });
@@ -139,56 +136,6 @@ function barchart() {
           d3.select(event.currentTarget).classed("selected", true)
         }
       })
-
-
-      selectableElements = bar;
-
-
-
-
-
-
-    // svg.call(brush);
-    //
-    // // Highlight points when brushed
-    // function brush(g) {
-    //   const brush = d3.brush()
-    //     .on('start brush', highlight)
-    //     .on('end', brushEnd)
-    //     .extent([
-    //       [-margin.left, -margin.bottom],
-    //       [width + margin.right, height + margin.top]
-    //     ]);
-    //
-    //   ourBrush = brush;
-    //
-    //   g.call(brush); // Adds the brush to this element
-    //
-    //   // Highlight the selected circles.
-    //   function highlight(event, d) {
-    //     if (event.selection === null) return;
-    //     const [
-    //       [x0, y0],
-    //       [x1, y1]
-    //     ] = event.selection;
-    //     points.classed('selected', d =>
-    //       x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
-    //     );
-    //
-    //     // Get the name of our dispatcher's event
-    //     let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
-    //
-    //     // Let other charts know
-    //     dispatcher.call(dispatchString, this, svg.selectAll('.selected').data());
-    //   }
-    //
-    //   function brushEnd(event, d) {
-    //     // We don't want infinite recursion
-    //     if(event.sourceEvent !== undefined && event.sourceEvent.type!='end'){
-    //       d3.select(this).call(brush.move, null);
-    //     }
-    //   }
-    // }
 
     return chart;
   }
