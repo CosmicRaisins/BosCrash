@@ -27,7 +27,7 @@ let color = d3.scaleOrdinal()
 
 // connect d3 geocoding to mapboxgl
 function project(d) {
-  return map.project(new mapboxgl.LngLat(d.lon, d.lat));
+  return map.project(new mapboxgl.LngLat(d.LON, d.LAT));
 }
 
 // append the tooltip
@@ -38,6 +38,7 @@ let mapTip = d3.select("body").append("div")
 // load data
 d3.csv("data/location.csv").then(function (data) {
 
+  console.log(data)
   let sizeValue = d => d.num
   // define a size scale for the points
   let sizeMax = 2
@@ -73,6 +74,9 @@ d3.csv("data/location.csv").then(function (data) {
         .style("top", (event.pageY + 15) + "px");
     })
 
+  dots.selectAll("circle")
+    .data(data.filter(function (d) {return d.CNTY_NAME == "SUFFOLK"}))
+
 
   // handles mouseout events for the points on line
   dots.on("mouseout", function(event, d) {
@@ -101,6 +105,11 @@ d3.csv("data/location.csv").then(function (data) {
       .attr("cy", function(d) {
         return project(d).y;
       });
+  }
+
+  function updateSelection(selectedData) {
+    svg.selectAll("dots")
+      .data(data)
   }
 
 // reposition dots in d3 overlay when mapbox is interacted

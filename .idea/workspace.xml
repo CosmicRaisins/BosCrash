@@ -21,8 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="74314601-4ef0-4774-b21c-4715a6492353" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/TestingData - Copy.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/weather.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/location.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/location.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/time.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/barchart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/barchart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/linechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/linechart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/mapchart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/mapchart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/visualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/visualization.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +52,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-team-8-bikes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../assignment--brushing-and-linking-CosmicRaisins" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -67,6 +71,10 @@
       <workItem from="1605735587299" duration="930000" />
       <workItem from="1606238906507" duration="54000" />
       <workItem from="1606239041178" duration="19146000" />
+      <workItem from="1606267174717" duration="2571000" />
+      <workItem from="1606272892210" duration="7134000" />
+      <workItem from="1606680896258" duration="3848000" />
+      <workItem from="1606753752329" duration="3016000" />
     </task>
     <servers />
   </component>
@@ -86,18 +94,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="538" y="292" key="FileChooserDialogImpl" timestamp="1606245425885">
+    <state x="303" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606275124529">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="538" y="292" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1606245425885" />
+    <state x="303" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1606275124529" />
+    <state x="538" y="292" key="FileChooserDialogImpl" timestamp="1606703519973">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="538" y="292" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1606703519973" />
     <state x="84" y="111" key="SettingsEditor" timestamp="1605674910026">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="84" y="111" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1605674910026" />
-    <state x="597" y="53" width="929" height="1006" key="dock-window-1" timestamp="1606263928677">
+    <state x="597" y="53" width="929" height="1006" key="dock-window-1" timestamp="1606267480545">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="597" y="53" width="929" height="1006" key="dock-window-1/0.0.2560.1040@0.0.2560.1040" timestamp="1606263928677" />
+    <state x="597" y="53" width="929" height="1006" key="dock-window-1/0.0.2560.1040@0.0.2560.1040" timestamp="1606267480545" />
     <state x="0" y="0" width="929" height="967" key="dock-window-2" timestamp="1606251458461">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -106,17 +118,5 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="335" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1605067202875" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/mapchart.js</url>
-          <line>56</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

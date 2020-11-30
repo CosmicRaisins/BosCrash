@@ -45,7 +45,7 @@ function barchart() {
       .padding(0.5);
 
     yScale
-      .domain([1600, 0])
+      .domain([55000, 0])
       .rangeRound([0, height]);
 
     // X axis
@@ -91,19 +91,19 @@ function barchart() {
       .enter()
       .append("rect")
       .attr("x", function(d) {
-        return xScale(d.COUNTY);
+        return xScale(d.CNTY_NAME);
       })
       .attr("width", xScale.bandwidth())
       .attr("y", function(d) {
-        return yScale(d.Numbers);
+        return yScale(d.num);
       })
       .attr("rx", 3)
       .attr("ry", 3)
       .attr("height", function(d) {
-        return height - yScale(d.Numbers);
+        return height - yScale(d.num);
       })
-      .style("fill", function (d) { return color1(d.COUNTY)})
-      .style("stroke", function (d) { return color1(d.COUNTY)})
+      .style("fill", function (d) { return color1(d.CNTY_NAME)})
+      .style("stroke", function (d) { return color1(d.CNTY_NAME)})
       .style("stroke-width", 2)
       .classed("selected", true)
       .on("mouseover", function(event,d) {
@@ -117,7 +117,7 @@ function barchart() {
         barTip.transition()
           .duration(200)
           .style("opacity", 1);
-        barTip.html(d.COUNTY + "<br/>" + "<br/>" + d.Numbers +" crashes")
+        barTip.html(d.CNTY_NAME + "<br/>" + "<br/>" + d.num +" crashes")
           .style("left", (event.pageX + 15) + "px")
           .style("top", (event.pageY + 15) + "px");
       });
@@ -154,7 +154,7 @@ function barchart() {
           // get all the counties curretly selected
           let temp = svg.selectAll('.selected').data()
           let selected = []
-          temp.forEach(element => selected.push(element["COUNTY"]));
+          temp.forEach(element => selected.push(element["CNTY_NAME"]));
           // Let other charts know
           dispatcher.call(dispatchString, this, selected);
 
@@ -163,7 +163,7 @@ function barchart() {
             .classed("selected", true)
             .transition()
             .duration(100)
-            .style("fill", function (d) { return color1(d.COUNTY)});
+            .style("fill", function (d) { return color1(d.CNTY_NAME)});
 
           // Get the name of our dispatcher's event
           let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
@@ -171,7 +171,7 @@ function barchart() {
           // get all the counties curretly selected
           let temp = svg.selectAll('.selected').data()
           let selected = []
-          temp.forEach(element => selected.push(element["COUNTY"]));
+          temp.forEach(element => selected.push(element["CNTY_NAME"]));
 
           // Let other charts know
           dispatcher.call(dispatchString, this, selected);

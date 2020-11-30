@@ -22,7 +22,7 @@ d3.csv("data/time.csv").then(data => {
     ("#vis-svg-1", data);
 })
 
-d3.csv("data/COUNTY_DATA.csv").then(data => {
+d3.csv("data/county.csv").then(data => {
 
   // General event type for selections, used by d3-dispatch
   // https://github.com/d3/d3-dispatch
@@ -34,10 +34,15 @@ d3.csv("data/COUNTY_DATA.csv").then(data => {
   let barChart = barchart()
     .width(850)
     .height(320)
-    .x(d => d.COUNTY)
+    .x(d => d.CNTY_NAME)
     .xLabel("County")
-    .y(d => d.Numbers)
+    .y(d => d.num)
     .yLabel("Number of Crashes by County")
     .selectionDispatcher(d3.dispatch(dispatchString))
     ("#vis-svg-2", data);
+
+
+  // barChart.selectionDispatcher()
+  //   .on("selectionUpdated", mapChart.updateSelection)
 })
+
