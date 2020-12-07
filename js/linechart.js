@@ -52,7 +52,7 @@ function linechart() {
 
     // X axis
     let xAxis = svg.append('g')
-      .attr('transform', 'translate(0,' + (height + 35) + ')')
+      .attr('transform', 'translate(0,' + (height + 10) + ')')
       .call(d3.axisBottom(xScale));
     //TODO: does not work
         // .ticks(0, 22, 12));
