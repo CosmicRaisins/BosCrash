@@ -7,7 +7,7 @@
 
   <!-- Title -->
   <title>Project Team 10: Visualizing Boston Crash Statistics, DS 4200 F20</title>
-  
+
   <!-- CSS Styling -->
   <link rel='stylesheet' href='style.css'>
 
@@ -25,116 +25,111 @@
 <!-- Main page content -->
 <body>
 
-  <!-- Update this with your GitHub repo URL -->
-  <span id='forkongithub'><a href='https://github.com/NEU-DS-4200-F20/project-group-10-boston-crash-statistics'>Fork me on GitHub</a></span>
+<!-- Update this with your GitHub repo URL -->
+<span id='forkongithub'><a href='https://github.com/NEU-DS-4200-F20/project-group-10-boston-crash-statistics'>Fork me on GitHub</a></span>
 
-  <!-- Writeup -->
-  <div class='content-column'>
-   <h1>Project Team 10: Visualizing Boston Crash Statistics, DS 4200 F20</h1>
-    
-    <p><strong>Zhaoze Zhang</strong>, <strong>Jiaming Hu</strong>, <strong>Fan Xu</strong></p>
-    
-    <p>Service-Learning Course Project as part of
-	<a href='https://canvas.instructure.com/courses/1781732'>DS 4200 F20: Information Visualization</a>, 
-	taught by <a href='https://cody.khoury.northeastern.edu/'>Prof. Cody Dunne</a>, 
-	<a href='https://visualization.khoury.northeastern.edu/'>Data Visualization @ Khoury</a>, 
-	<a href='https://www.khoury.northeastern.edu/'>Northeastern University</a>.</p>
-    
-    
-    <h1>Abstract</h1>
-    
-    <p>On average 4–5 people died in a traffic accident every hour
-      in 2019. This visualization aims to raise public awareness of
-      the danger of operating motor vehicles. The visualization
-      will highlight high-risk zones in Boston streets, and allows
-      filtering by road characteristics like surface type and speed
-      limits. It will also explore the correlations between factors
-      contributing and car crashes. Along this project, we will
-      work with Massachusetts government officials to provide
-      in-depth visualization. The visualization will offer a
-      minimalist and interactive interface through HTML and
-      JavaScript for Boston drivers to navigate and explore.</p>
+<!-- Writeup -->
+<div class='content-column'>
+  <h1>Project Team 10: Visualizing Boston Crash Statistics, DS 4200 F20</h1>
 
-    
-    <h1>Visualization</h1>
-    <p>We wanted to use the line chart to mainly showcase the trend of crash frequency throughout the day, rather than
-      detailed numbers at each hour. With this goal we removed the y axis for a cleaner look, but we do support hover over
-      tooltips for detailed data-on-demand. Currently the line chart supports hover over data display, and click selection.
-      Brushing is not supported yet.</p>
+  <p><strong>Zhaoze Zhang</strong>, <strong>Jiaming Hu</strong>, <strong>Fan Xu</strong></p>
 
-    
-  </div>
-  
-  <!-- Visualization goes here -->
-  <div class='vis-holder'>
-    <!-- Change viewbox to whatever you want, e.g., '0 0 1000 6000' This determines your aspect ratio and coordinate system -->    
-    <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
-    <svg id='vis-svg'
-      preserveAspectRatio='xMidYMid meet' class='vis-svg' viewBox='0 0 1920 1080' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+  <p>Service-Learning Course Project as part of
+    <a href='https://canvas.instructure.com/courses/1781732'>DS 4200 F20: Information Visualization</a>,
+    taught by <a href='https://cody.khoury.northeastern.edu/'>Prof. Cody Dunne</a>,
+    <a href='https://visualization.khoury.northeastern.edu/'>Data Visualization @ Khoury</a>,
+    <a href='https://www.khoury.northeastern.edu/'>Northeastern University</a>.</p>
 
 
+  <h1>Abstract</h1>
 
-      <rect x=0 y=0 width='100%' height='100%' fill='191919' rx="15"></rect>
-      <rect x=25 y=25 width='42.5%' height='72%' fill='#2D2D2D' rx="15"></rect>
-      <rect x=25 y=830 width='42.5%' height='21%' fill='#2D2D2D' rx="15"></rect>
-      <rect x=870 y=25 width='53.5%' height='46.75%' fill='#2D2D2D' rx="15"></rect>
-      <rect x=870 y=553 width='53.5%' height='46.75%' fill='#2D2D2D' rx="15"></rect>
-      <svg id='vis-svg-1' x=860 y=-10 width='53.5%' height='47.5%'></svg>
-      <svg id='vis-svg-2' x=860 y=543 width='53.5%' height='46.75%'></svg>
-      
-      
+  <p>On average 4–5 people died in a traffic accident every hour
+    in 2019. This visualization aims to raise public awareness of
+    the danger of operating motor vehicles. The visualization
+    will highlight high-risk zones in Boston streets, and allows
+    filtering by road characteristics like surface type and speed
+    limits. It will also explore the correlations between factors
+    contributing and car crashes. Along this project, we will
+    work with Massachusetts government officials to provide
+    in-depth visualization. The visualization will offer a
+    minimalist and interactive interface through HTML and
+    JavaScript for Boston drivers to navigate and explore.</p>
+
+
+  <h1>Visualization</h1>
+  <p>We wanted to use the line chart to mainly showcase the trend of crash frequency throughout the day, rather than
+    detailed numbers at each hour. With this goal we removed the y axis for a cleaner look, but we do support hover over
+    tooltips for detailed data-on-demand. Currently the line chart supports hover over data display, and click selection.
+    Brushing is not supported yet.</p>
+
+
+</div>
+
+<!-- Visualization goes here -->
+<div class='vis-holder'>
+  <!-- Change viewbox to whatever you want, e.g., '0 0 1000 6000' This determines your aspect ratio and coordinate system -->
+  <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
+  <svg id='vis-svg'
+       preserveAspectRatio='xMidYMid meet' class='vis-svg' viewBox='0 0 1920 1080' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+    <rect x=300 y=0 width='70%' height='100%' fill='191919' rx="15"></rect>
+    <rect x=325 y=25 width='67%' height='46.75%' fill='#2D2D2D' rx="15"></rect>
+    <rect x=325 y=553 width='67%' height='46.75%' fill='#2D2D2D' rx="15"></rect>
+    <svg id='vis-svg-1' x=340 y=-10 width='60%' height='47.5%'></svg>
+    <svg id='vis-svg-2' x=340 y=543 width='60%' height='47.5%'></svg>
+    <svg id='vis-svg-3' x=340 y=1000 width='60%' height='47.5%'></svg>
+
     <!-- Don't delete the closing tag! -->
-    </svg>
-  </div>
+  </svg>
+</div>
 
-  <div id="map"></div>
+<div id="map"></div>
 
-  <!-- Further writeup -->
-  <div class = 'content-column'>
+<!-- Further writeup -->
+<div class = 'content-column'>
 
-    <h1>Demo Video</h1>
-    
-    <p>Embed an MP4 demo video using the HTML5 &lt;video&gt; tag. For example, this screen recording Prof. Cody Dunne made of Mike Bostock's flexible transitions in D3 slide:</p>
-    
-    <video controls width='100%'>
-      <source src='http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4' type='video/mp4'>
-      <p>Your browser doesn't support HTML5 video. Here is
-       a <a href='http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4'>link to the video</a> instead.</p>
-    </video>
+  <h1>Demo Video</h1>
 
-    <h1>Visualization explanation</h1>
-    
-    <p>Replace with a brief explanation (can be copied from the paper) and linked presentation slides.</p>
-    
-    <h1>Acknowledgments</h1>
+  <p>Embed an MP4 demo video using the HTML5 &lt;video&gt; tag. For example, this screen recording Prof. Cody Dunne made of Mike Bostock's flexible transitions in D3 slide:</p>
 
-    <p>
-      List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.
-    </p>
+  <video controls width='100%'>
+    <source src="files/demo.mp4" type='video/mp4'>
+    <p>Your browser doesn't support HTML5 video. Here is
+      a <a href='http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4'>link to the video</a> instead.</p>
+  </video>
 
-    <ul>
-      <li><a href='https://d3js.org/'>
-        D3: Data-Driven Documents</a>
-        by Mike Bostock is used for manipulating the DOM to create visualizations.
-      </li>
-      <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
-        Pure CSS responsive 'Fork me on GitHub' ribbon</a>
-        by Chris Heilmann is used to create the banner that links back to the source code repository.
-      </li>
-      <li><a href='https://leanpub.com/d3-t-and-t-v6'>
-        D3 Tips and Tricks v6</a>
-        by Malcolm Maclean is referenced for the hover tooltip implementation.
-      </li>
-    </ul>
-  </div>
+  <h1>Visualization explanation</h1>
 
-  
-  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
-  <script src='lib/d3.v6.1.1/d3.min.js'></script>
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
-  <script src='js/mapchart.js'></script>
-  <script src='js/linechart.js'></script>
-  <script src='js/barchart.js'></script>
-  <script src='js/visualization.js'></script>
+  <p>Replace with a brief explanation (can be copied from the paper) and linked presentation slides.</p>
+
+  <h1>Acknowledgments</h1>
+
+  <p>
+    List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.
+  </p>
+
+  <ul>
+    <li><a href='https://d3js.org/'>
+      D3: Data-Driven Documents</a>
+      by Mike Bostock is used for manipulating the DOM to create visualizations.
+    </li>
+    <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
+      Pure CSS responsive 'Fork me on GitHub' ribbon</a>
+      by Chris Heilmann is used to create the banner that links back to the source code repository.
+    </li>
+    <li><a href='https://leanpub.com/d3-t-and-t-v6'>
+      D3 Tips and Tricks v6</a>
+      by Malcolm Maclean is referenced for the hover tooltip implementation.
+    </li>
+  </ul>
+</div>
+
+
+<!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+<script src='lib/d3.v6.1.1/d3.min.js'></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
+<script src='js/mapchart.js'></script>
+<script src='js/linechart.js'></script>
+<script src='js/barchart.js'></script>
+<script src='js/visualization.js'></script>
 </body>
 </html>
